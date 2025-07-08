@@ -1,16 +1,23 @@
-# glucous_app
+# GlucoUS
 
-A new Flutter project.
+Flutter 기반 혈당 시뮬레이터 앱  
++ FastAPI 기반 시뮬레이션 서버 연동
 
-## Getting Started
+## 구조
 
-This project is a starting point for a Flutter application.
+- `lib/`: Flutter UI/로직
+- `sim_server/`: Python FastAPI 서버
+- `assets/`: 이미지, JSON 등 리소스
 
-A few resources to get you started if this is your first Flutter project:
+## 실행
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Flutter 앱
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter run -d emulator-5554
+```
+
+```bash
+cd sim_server
+uvicorn main:app --reload --port 8000
+``` 
